@@ -1,4 +1,4 @@
-# 🤖 MatchMaker de Vagas com IA | AI Job MatchMaker
+# MatchMaker de Vagas com IA | AI Job MatchMaker
 
 <p align="center">
   <a href="#-português">
