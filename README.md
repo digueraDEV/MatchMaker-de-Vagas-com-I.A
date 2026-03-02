@@ -1,11 +1,17 @@
-# MatchMaker de Vagas com IA | AI Job MatchMaker
+#MatchMaker de Vagas com IA | AI Job MatchMaker
+
+<p align="center">
+  <a href="https://digueradev.github.io/MatchMaker-de-Vagas-com-I.A/">
+    <img src="https://img.shields.io/badge/🚀_Live_Demo-Acesse_o_Projeto-00ff88?style=for-the-badge&logo=github" alt="Live Demo">
+  </a>
+</p>
 
 <p align="center">
   <a href="#-português">
-    <img src="https://img.shields.io/badge/Language-Português-green?style=for-the-badge" alt="Português">
+    <img src="https://img.shields.io/badge/Language-Português-green?style=flat-square" alt="Português">
   </a>
   <a href="#-english">
-    <img src="https://img.shields.io/badge/Language-English-blue?style=for-the-badge" alt="English">
+    <img src="https://img.shields.io/badge/Language-English-blue?style=flat-square" alt="English">
   </a>
 </p>
 
@@ -18,23 +24,22 @@
 ## 🇧🇷 Português
 
 ### 📝 Sobre o Projeto
-O **MatchMaker de Vagas com IA** é uma plataforma inovadora projetada para otimizar o processo de recrutamento. Utilizando Inteligência Artificial de ponta, o sistema analisa a compatibilidade entre o currículo e os requisitos de uma vaga em segundos.
+O **MatchMaker de Vagas com IA** é uma ferramenta de recrutamento inteligente que conecta candidatos às vagas ideais. O sistema utiliza IA para analisar currículos e descrições de cargos, gerando uma nota de compatibilidade e feedbacks construtivos.
 
-### Tecnologias Utilizadas
-- **Frontend:** HTML5, CSS3 (Modern Dark Mode), JavaScript (Vanilla).
-- **Integração:** [n8n](https://n8n.io/) (Workflow Automation).
-- **IA:** Modelo **Llama 3** via API do **Groq**.
+🔗 **Link do Projeto:** [Acesse aqui](https://digueradev.github.io/MatchMaker-de-Vagas-com-I.A/)
 
-### Como Funciona?
-1. **Captura:** O JavaScript captura os dados das `textarea`.
-2. **Webhook:** Os dados são enviados via `Fetch` (POST) para o **n8n**.
-3. **IA:** O n8n orquestra a chamada para o **Groq**, que processa a análise semântica.
-4. **Interface:** O JS trata a resposta, limpa caracteres especiais e anima a **barra de progresso**.
+###  Tecnologias Utilizadas
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla).
+- **Integração:** [n8n](https://n8n.io/) para orquestração de Webhooks.
+- **IA:** Modelo **Llama 3** via API do **Groq** para processamento de linguagem natural.
 
-### Destaques do JavaScript
-- **Async/Await:** Para garantir uma UI fluida enquanto a IA "pensa".
-- **Regex:** `(\d+)%` para extrair a nota numérica e alimentar a barra visual.
-- **Manipulação de DOM:** Feedback em tempo real para o usuário (botão "Analisando...").
+###  Como Funciona?
+1. O usuário insere o currículo e a vaga.
+2. O **JavaScript** envia os dados via `Fetch` para o servidor (n8n).
+3. O **n8n** processa a lógica e solicita a análise da IA.
+4. O resultado volta para o site, onde o JS anima a **barra de progresso** e exibe o texto limpo.
+
+> **Nota:** Para que a demo funcione 100%, o servidor n8n precisa estar ativo.
 
 [Voltar ao topo ↑](#-matchmaker-de-vagas-com-ia--ai-job-matchmaker)
 
@@ -43,23 +48,22 @@ O **MatchMaker de Vagas com IA** é uma plataforma inovadora projetada para otim
 ## 🇺🇸 English
 
 ### 📝 About the Project
-**AI Job MatchMaker** is an innovative platform designed to streamline the recruitment process. Using cutting-edge Artificial Intelligence, the system analyzes the compatibility between a resume and job requirements in seconds.
+**AI Job MatchMaker** is an intelligent recruitment tool that connects candidates with their ideal jobs. The system uses AI to analyze resumes and job descriptions, generating a compatibility score and constructive feedback.
+
+🔗 **Live Demo:** [Check it out here](https://digueradev.github.io/MatchMaker-de-Vagas-com-I.A/)
 
 ### Technologies
-- **Frontend:** HTML5, CSS3 (Modern Dark Mode), JavaScript (Vanilla).
-- **Integration:** [n8n](https://n8n.io/) (Workflow Automation).
-- **AI:** **Llama 3** model via **Groq** API.
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla).
+- **Integration:** [n8n](https://n8n.io/) for Webhook orchestration.
+- **AI:** **Llama 3** model via **Groq** API for high-speed NLP.
 
 ### How it Works
-1. **Capture:** JavaScript captures data from the text areas.
-2. **Webhook:** Data is sent via `Fetch` (POST) to **n8n**.
-3. **AI:** n8n orchestrates the call to **Groq**, which processes the semantic analysis.
-4. **Interface:** JS handles the response, cleans special characters, and animates the **progress bar**.
+1. User inputs the resume and job description.
+2. **JavaScript** sends the data via `Fetch` to the backend (n8n).
+3. **n8n** processes the logic and requests the AI analysis.
+4. The result returns to the site, where JS animates the **progress bar** and displays the formatted text.
 
-### JavaScript Highlights
-- **Async/Await:** Ensures a smooth UI while the AI "thinks".
-- **Regex:** `(\d+)%` to extract the numerical score and power the visual bar.
-- **DOM Manipulation:** Real-time feedback for the user ("Analyzing..." button state).
+> **Note:** For the live demo to work 100%, the n8n server must be running.
 
 [Back to top ↑](#-matchmaker-de-vagas-com-ia--ai-job-matchmaker)
 
@@ -67,5 +71,5 @@ O **MatchMaker de Vagas com IA** é uma plataforma inovadora projetada para otim
 
 ## 📂 Como Replicar | How to Replicate
 1. Clone este repositório / *Clone this repository*.
-2. Importe o arquivo `workflow-n8n.json` no seu n8n / *Import the `workflow-n8n.json` file*.
-3. Configure sua API Key no n8n e a URL no `script.js` / *Set up your API Key in n8n and the URL in `script.js`*.
+2. Importe o arquivo `workflow-n8n.json` no seu n8n / *Import the `workflow-n8n.json` file into your n8n*.
+3. Configure sua API Key do Groq no n8n / *Set up your Groq API Key in n8n*.
