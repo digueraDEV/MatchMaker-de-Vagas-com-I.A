@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchMaker de Vagas com IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>MatchMaker de Vagas com IA</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre o Projeto</h2>
+            <p>O MatchMaker de Vagas com IA é uma plataforma inovadora que utiliza inteligência artificial para conectar candidatos a vagas de emprego de forma eficiente e personalizada. Através de algoritmos avançados, a plataforma analisa o perfil dos candidatos e as exigências das vagas para proporcionar um match perfeito.</p>
+        </section>
+
+        <section>
+            <h2>Funcionalidades</h2>
+            <ul>
+                <li>Análise de perfil do candidato</li>
+                <li>Recomendações personalizadas de vagas</li>
+                <li>Feedback em tempo real sobre o processo de candidatura</li>
+                <li>Integração com plataformas de recrutamento</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Benefícios</h2>
+            <p>O MatchMaker de Vagas com IA oferece diversos benefícios tanto para candidatos quanto para recrutadores, incluindo:</p>
+            <ul>
+                <li>Aumento da eficiência no processo de recrutamento</li>
+                <li>Redução do tempo gasto na busca por vagas</li>
+                <li>Melhoria na qualidade das candidaturas</li>
+                <li>Acesso a uma ampla variedade de oportunidades de emprego</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Teste seu Match Agora!</h2>
+            <p><textarea name="curriculo" id="campo-curriculo" placeholder="Cole seu currículo aqui..."></textarea></p>
+            <p><textarea name="vaga" id="campo-vaga" placeholder="Descreva a vaga desejada..."></textarea></p>
+            
+            <button id="btn-testar-match">Testar Match</button>
+
+            <div id="container-progresso" style="display: none; margin-top: 25px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold;">
+                    <span>Match Score</span>
+                    <span id="valor-porcentagem">0%</span>
+                </div>
+                <div style="width: 100%; background-color: #333; border-radius: 10px; height: 16px; overflow: hidden; border: 1px solid #444;">
+                    <div id="barra-preenchida" style="width: 0%; height: 100%; background-color: #ff7300; border-radius: 10px; transition: width 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67); box-shadow: 0 0 10px #ff7300;"></div>
+                </div>
+            </div>
+
+            <div id="resultado-match"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MatchMaker de Vagas com IA. Todos os direitos reservados.</p>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+{
+  "name": "API MatchMaker de Vagas",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "MatchMaker",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "64510697-2ecc-477b-b01d-4e90a7342242",
+      "name": "Webhook",
+      "webhookId": "6bb8141c-f19d-4927-a24f-9f3fd6e9f1ed"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Você é um recrutador sênior de tecnologia. Sua tarefa é analisar a compatibilidade entre um currículo e uma vaga de emprego.\nSeja direto, amigável e retorne apenas o resultado da análise, sem introduções longas.\nDê uma nota de 0 a 100% de match.\nListe 2 pontos fortes do candidato para essa vaga.\nListe 1 ponto de melhoria ou o que falta para ele ser o candidato ideal.\nIMPORTANTE: Não use negrito (asteriscos), não use listas com hifens. Retorne o texto de forma limpa. Use títulos simples em letra maiúscula para separar as seções.\n\nVAGA DESEJADA:\n{{ $json.body.vagaEnviada }}\n\nCURRÍCULO DO CANDIDATO:\n {{ $json.body.curriculoEnviado }}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        208,
+        0
+      ],
+      "id": "8488192d-f166-4f05-86a7-a217e3890784",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        144,
+        208
+      ],
+      "id": "483e7d3b-7607-4a03-950f-616e1d404c2b",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "XsDy5Si07siYnoxp",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        560,
+        0
+      ],
+      "id": "716d3ec9-3bdc-4282-bbe5-8cf3d96bc33f",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "8880be24-f19f-4b58-a045-9835998ec0a2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "085fea62501f056736b99eb1dd413831101be05a04584b23d062678d172e64c2"
+  },
+  "id": "A01kuFSitU6JC9hI",
+  "tags": []
+}

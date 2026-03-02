@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222222;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: #252525;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    resize: vertical; /* Permite ao usuário ajustar a altura */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00ff88;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #00cc6e;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+ h2 {
+    color: #ff7300;}
+    
+    
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #ff7300;
+    padding: 20px;
+    text-align: center;
+}
+
+textarea {
+    box-sizing: border-box;
+    background-color: #ff7300;
+    color: white;
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-color: #ff7300;
+    border-radius: 5px;
+}
+
+textarea:hover {
+    background-color: #ff7300;
+    transform: scale(1.01);
+}
+::placeholder {
+    font-family: Arial, sans-serif;
+    color: white;
+    opacity: 1;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff7300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ff7300;
+    transform: scale(1.05);
+}
+
+#resultado-match {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border-left: 4px solid #ff7300;
+    color: #f0f0f0;
+    line-height: 1.8; /* Aumenta o espaço entre linhas */
+    font-size: 1.1rem;
+    white-space: pre-wrap; /* Essencial para respeitar as quebras de linha da IA */
+}
+
+/* Container que agrupa o texto "Match Score" e a barra */
+#container-progresso {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    margin-bottom: 20px;
+}
+
+/* O fundo da barra (a parte que fica vazia) */
+#container-progresso div[style*="background-color: #333"] {
+    background-color: #1a1a1a !important; /* Sobrescreve o estilo inline para um cinza mais profundo */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* A barra que preenche (com efeito de brilho) */
+#barra-preenchida {
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de "brilho passando" pela barra (opcional, dá um toque premium) */
+#barra-preenchida::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
